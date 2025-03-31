@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 90%;
+}
+:root{
+    --admin-header  : #004b42;
+    --white : #ffffff;
+}
+.admin-header {
+    position: fixed;
+    width: 75%;
+    left: 25%;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--admin-header);
+    padding: .5rem 1rem;
+}
