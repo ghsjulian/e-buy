@@ -1,0 +1,55 @@
+:root {
+    --blue: #006ccb;
+    --icon: #4d535a;
+}
+
+.admin-main-page {
+    position: relative;
+    width: 75%;
+    left: 25%;
+    right: 0;
+    top: 3.5rem;
+    z-index: 900;
+    height: 100%;
+}
+
+.admin-main-page .admin-grid {
+    width: 97%;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(auto, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.admin-grid .admin-col {
+    height: 100%;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 5px;
+    /*  box-shadow: var(--normal-shadow); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.admin-col .icon {
+    font-size: 33px;
+    color: var(--icon);
+}
+.admin-col span {
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 17px;
+}
+/*--> Media Query Responsive <--*/
+@media (max-width: 668px) {
+    .admin-main-page {
+        width: 100%;
+        left: 0;
+    }
+    .admin-main-page .admin-grid {
+        grid-template-columns: repeat(auto-fill, minmax(47%, 1fr));
+    }
+}

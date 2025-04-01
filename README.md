@@ -1,12 +1,83 @@
-# React + Vite
+# E-Buy ECommerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### Project Name :  e-buy e-commerce website
 
-Currently, two official plugins are available:
+#### Project Type : E-Commerce Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Technologies : MERN STACK
 
-## Expanding the ESLint configuration
+#### Tools : GIT, Acode Editor, Termux
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### Front End : React+Vite, HTML5, CSS3, JavaScript
+
+#### Back End : NodeJS,ExpressJS,MongoDB
+
+#### Databases : MongoDB
+
+#### Developer Name : <a href="https://ghsresume.netlify.app" target="_blank">Ghs Julian</a>
+
+#### Developer Facebook : <a href="https://web.facebook.com/ghs.julian.85" target="_blank">Facebook</a>
+
+#### Developer Email : <a href="email:ghsjulian@outlook.com" target="_blank"> ghsjulian@outlook.com </a>
+
+#### Live Demo : <a href="https://" target="_blank">View Demo </a>
+
+#### Start Date : 01 April 2025
+
+#### End Date : Working...
+
+---
+
+## About This Project
+
+**This is a Networking project where users can create their new account connect with each others. they can talk in audio voice call. but this features isn't available now because i can't code anymore using my phone that's why but it's really awesome!**
+
+---
+
+## Features And Functionalities :
+
+**See the project features and functionalities !**
+
+-   **Create New Account**
+
+-   **Login To Account**
+
+-   **Logout From Account**
+
+-   **Edit User Profile**
+
+-   **Live Search A User**
+
+-   **See Users Online Visibility**
+
+-   **More...**
+
+---
+
+## How To Clone :
+
+**Copy the command bellow and paste on your terminal !**
+
+```bash
+git clone https://github.com/Ghsjulian/talk-tuie.git
+cd talk-tuie
+cd client
+npm install && npm run dev
+cd server
+npm install && npm run dev
+```
+
+
+---
+
+#### Screensots And Demo (Mobile Mode) :
+
+<img src="/demo/S1.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/demo/S2.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/demo/S3.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/demo/S4.jpg" width="365px" height="710px"/><br/><br/>
+
+
+#### Thank You !
+
+---

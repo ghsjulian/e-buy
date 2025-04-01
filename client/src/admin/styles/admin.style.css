@@ -12,6 +12,11 @@ html {
     --admin-sidebar: #005b6e;
     --white: #ffffff;
     --yellow: rgb(255, 245, 46);
+    --page: #b9c1c8;
+}
+body {
+    background: var(--page);
+    scroll-behavior: smooth;
 }
 .admin-header {
     position: fixed;
@@ -71,7 +76,7 @@ html {
     padding: 1.3rem 0.5rem;
     display: flex;
     flex-direction: column;
-    z-index: 9000;
+    z-index: 9000000;
 }
 
 .admin-open-sidebar {
@@ -140,7 +145,6 @@ html {
     height: 60%;
     background: #000f1c;
     border-radius: 5px;
-    z-index: 9000;
     animation: noti 0.3s linear;
 }
 .float-area .notification {
@@ -151,6 +155,7 @@ html {
     padding: 1rem 0.5rem;
     overflow-x: hidden;
     overflow-y: auto;
+    z-index: 900000;
 }
 .float-area .notification a {
     margin: 0.4rem 0;
@@ -188,7 +193,7 @@ html {
         bottom: 0;
         animation: closenav 3.5s linear;
         background: rgba(53, 54, 54, 0.472);
-        z-index: 90000;
+        z-index: 90000000;
     }
     .float-area .notification {
         position: fixed;
@@ -198,7 +203,7 @@ html {
         height: 80%;
         background: #000f1c;
         border-radius: 5px;
-        z-index: 900;
+        z-index: 900000;
         animation: noti 0.3s linear;
     }
 }

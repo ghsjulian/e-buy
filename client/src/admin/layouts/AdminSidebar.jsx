@@ -1,19 +1,32 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { BsHandbag } from "react-icons/bs";
+import { HiOutlineCollection } from "react-icons/hi";
+import { MdOutlineCategory } from "react-icons/md";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { IoBagAddOutline } from "react-icons/io5";
+import { MdInfoOutline } from "react-icons/md";
+import { GoGear } from "react-icons/go";
+import { FaBorderNone } from "react-icons/fa";
+import { CiDeliveryTruck } from "react-icons/ci";
+import { MdOutlineWhatsapp } from "react-icons/md";
+import { LuChartNoAxesCombined } from "react-icons/lu";
+import { MdOutlinePrivacyTip } from "react-icons/md";
+
+
 
 const AdminSidebar = () => {
     return (
         <div className="admin-menu-list">
             <NavLink to="/admin">
                 <div className="icon">
-                    <BsHandbag />
+                    <MdOutlineDashboardCustomize />
                 </div>
                 <span>Admin Dashboard</span>
             </NavLink>
             <NavLink to="/admin">
                 <div className="icon">
-                    <BsHandbag />
+                    <FaBorderNone />
                 </div>
                 <span>Total Orders</span>
             </NavLink>
@@ -25,55 +38,55 @@ const AdminSidebar = () => {
             </NavLink>
             <NavLink to="/admin">
                 <div className="icon">
-                    <BsHandbag />
+                    <IoBagAddOutline />
                 </div>
                 <span>Add Product</span>
             </NavLink>
             <NavLink to="/admin">
                 <div className="icon">
-                    <BsHandbag />
+                    <HiOutlineCollection />
                 </div>
                 <span>View Collections</span>
             </NavLink>
             <NavLink to="/admin">
                 <div className="icon">
-                    <BsHandbag />
+                    <CiDeliveryTruck />
                 </div>
                 <span>View Deliveries</span>
             </NavLink>
             <NavLink to="/admin">
                 <div className="icon">
-                    <BsHandbag />
+                    <MdOutlineCategory />
                 </div>
                 <span>Create Categories</span>
             </NavLink>
             <NavLink to="/admin">
                 <div className="icon">
-                    <BsHandbag />
+                    <GoGear />
                 </div>
                 <span>Settings</span>
             </NavLink>
             <NavLink to="/admin">
                 <div className="icon">
-                    <BsHandbag />
+                    <MdInfoOutline />
                 </div>
                 <span>About US</span>
             </NavLink>
             <NavLink to="/admin">
                 <div className="icon">
-                    <BsHandbag />
+                    <MdOutlineWhatsapp />
                 </div>
                 <span>Contact US</span>
             </NavLink>
             <NavLink to="/admin">
                 <div className="icon">
-                    <BsHandbag />
+                    <LuChartNoAxesCombined />
                 </div>
                 <span>Report US</span>
             </NavLink>
             <NavLink to="/admin">
                 <div className="icon">
-                    <BsHandbag />
+                    <MdOutlinePrivacyTip />
                 </div>
                 <span>Privacy & Policy</span>
             </NavLink>
