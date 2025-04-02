@@ -78,6 +78,10 @@ body {
     flex-direction: column;
     z-index: 9000000;
 }
+.admin-sidebar .active,
+.admin-open-sidebar .active{
+    background: rgba(0, 15, 28, 0.552);
+}
 
 .admin-open-sidebar {
     position: fixed;

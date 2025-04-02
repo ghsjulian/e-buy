@@ -5,12 +5,11 @@ import { FiBell } from "react-icons/fi";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { BsHandbag } from "react-icons/bs";
 import AdminSidebar from "./AdminSidebar";
-import AdminNotification from "./AdminNotification"
-import AdminOrder from "./AdminOrder"
-
+import AdminNotification from "./AdminNotification";
+import AdminOrder from "./AdminOrder";
 
 const AdminHeader = () => {
-    const [isOpen, setOpen] = useState(false);
+     const [isOpen, setOpen] = useState(false);
     const [isNoti, setNoti] = useState(false);
     const [isOrder, setOrder] = useState(false);
     const openNav = () => {
@@ -22,6 +21,7 @@ const AdminHeader = () => {
     const openOrder = () => {
         setOrder(!isOrder);
     };
+    
     return (
         <>
             <header className="admin-header">
@@ -54,8 +54,8 @@ const AdminHeader = () => {
                 <div onClick={openNav} className="admin-close-nav"></div>
             )}
             <div className="float-area">
-            {isNoti && <AdminNotification/>}
-            {isOrder && <AdminOrder/>}
+                {isNoti && <AdminNotification />}
+                {isOrder && <AdminOrder />}
             </div>
         </>
     );
