@@ -9,19 +9,22 @@ import AdminNotification from "./AdminNotification";
 import AdminOrder from "./AdminOrder";
 
 const AdminHeader = () => {
-     const [isOpen, setOpen] = useState(false);
+    const [isOpen, setOpen] = useState(false);
     const [isNoti, setNoti] = useState(false);
     const [isOrder, setOrder] = useState(false);
-    const openNav = () => {
+    const openNav = e => {
+        e.preventDefault();
         setOpen(!isOpen);
     };
-    const openNoti = () => {
+    const openNoti = (e) => {
         setNoti(!isNoti);
+        e.preventDefault();
     };
-    const openOrder = () => {
+    const openOrder = (e) => {
         setOrder(!isOrder);
+        e.preventDefault();
     };
-    
+
     return (
         <>
             <header className="admin-header">

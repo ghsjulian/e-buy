@@ -9,7 +9,7 @@ html {
 }
 :root {
     --admin-header: #004b42;
-    --admin-sidebar: #005b6e;
+    --admin-sidebar: #002b34;
     --white: #ffffff;
     --yellow: rgb(255, 245, 46);
     --page: #b9c1c8;
@@ -80,7 +80,7 @@ body {
 }
 .admin-sidebar .active,
 .admin-open-sidebar .active{
-    background: rgba(0, 15, 28, 0.552);
+    background: rgba(0,0,0,0.552);
 }
 
 .admin-open-sidebar {
