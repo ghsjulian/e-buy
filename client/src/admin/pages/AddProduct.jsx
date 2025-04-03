@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { BsCloudUpload } from "react-icons/bs";
+import useAddProduct from "../hooks/useAddProduct"
 
 const AddProduct = () => {
     const [error, setError] = useState(false);
@@ -13,7 +14,18 @@ const AddProduct = () => {
         product_category: "",
         product_desc: ""
     });
+    const [images, setImages] = useState([]);
+    const {isLoading,addProduct} = useAddProduct()
+    
+    // Function to add a new image
+    const addImage = newImage => {
+        setImages(prevImages => [...prevImages, newImage]);
+    };
 
+    // Function to remove an image by index
+    const removeImage = index => {
+        setImages(prevImages => prevImages.filter((_, i) => i !== index));
+    };
     const handleChange = e => {
         const { name, value } = e.target;
         setProducts(prev => ({
@@ -24,10 +36,10 @@ const AddProduct = () => {
 
     const handleFileChange = e => {
         const files = Array.from(e.target.files);
-        console.log(files);
+        addImage(e.target.files[0]);
         setProducts(prev => ({
             ...prev,
-            product_images: files
+            product_images: images
         }));
     };
 
@@ -72,8 +84,9 @@ const AddProduct = () => {
 
     const handleSubmit = async e => {
         e.preventDefault();
+        console.log("Images -> ", images);
         if (!validateInputs()) return;
-        console.log("Products --> ", products);
+        // console.log("Products --> ", products);
         // Send data to the server
         try {
             const response = await fetch("/api/products", {
@@ -114,13 +127,7 @@ const AddProduct = () => {
             });
             msgRef.current.textContent = "An error occurred!";
         }
-
-        // Hiding Message
     };
- //    setTimeout(() => {
-//         msgRef.current.setAttribute("class", "");
-//         msgRef.current.textContent = "";
-//     }, 3000);
 
     return (
         <div className="add-product">
@@ -128,29 +135,23 @@ const AddProduct = () => {
             <div className="add-form">
                 <span ref={msgRef}></span>
                 <div className="images">
-                    {products.product_images.map((image, index) => (
-                        <div key={index} className="img-container">
-                            <img
-                                src={URL.createObjectURL(image)}
-                                alt="Product"
-                            />
-                            <div
-                                className="cross"
-                                onClick={() => {
-                                    const newImages =
-                                        products.product_images.filter(
-                                            (_, i) => i !== index
-                                        );
-                                    setProducts(prev => ({
-                                        ...prev,
-                                        product_images: newImages
-                                    }));
-                                }}
-                            >
-                                X
+                    {images.length > 0 &&
+                        images.map((image, index) => (
+                            <div key={index} className="img-container">
+                                <img
+                                    src={URL.createObjectURL(image)}
+                                    alt="Product"
+                                />
+                                <div
+                                    className="cross"
+                                    onClick={() => {
+                                        removeImage(index);
+                                    }}
+                                >
+                                    X
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
                 </div>
                 <label htmlFor="files">
                     <div className="icon">
@@ -161,7 +162,6 @@ const AddProduct = () => {
                 <input
                     id="files"
                     type="file"
-                    multiple
                     onChange={handleFileChange}
                     hidden
                 />

@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 
+import Login from "./login/Login"
 // Import Admins Components...
 import AdminLayouts from "./admin/layouts/AdminLayout";
 import AdminDashboard from "./admin/pages/AdminDashboard";
@@ -33,6 +34,10 @@ const myRoutes = [
                 element: <EditProduct />
             }
         ]
+    },
+    {
+       path : "/login",
+       element : <Login/>
     }
 ];
 

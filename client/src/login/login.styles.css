@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --login-bg: #b9c1c8;
+    --blue: #006ccb;
+    --icon: #4d535a;
+    --green: #004b42;
+    --white: #ffffff;
+}
+body {
+    background: var(--login-bg);
+    scroll-behavior: smooth;
+}
+
+.full-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.full-page .login-container {
+    width: 30%;
+    margin: 0.5rem auto;
+    padding: 1rem 0.5rem;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.login-container h3 {
+    color: var(--green);
+    font-weight: 600;
+    margin: 0.5rem auto;
+    font-size: 20px;
+}
+.login-container #msg {
+}
+.login-container input {
+    width: 90%;
+    outline: none;
+    border: 1px solid var(--green);
+    color: var(--icon);
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    margin: 0.5rem auto;
+    background: transparent;
+}
+.login-container button {
+    width: 90%;
+    outline: none;
+    border: none;
+    background: var(--green);
+    color: var(--white);
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    margin: 0.5rem auto;
+    transition: 0.3s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container button:hover {
+    background: rgb(0, 72, 22);
+}
+.login-container button .loader {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: transparent;
+    margin: 0 0.5rem;
+    border-left: 3px solid currentColor;
+    border-right: 3px solid currentColor;
+    border-top: 3px solid currentColor;
+    border-bottom: 3px solid transparent;
+    animation: loader .5s linear infinite;
+}
+/*--> Responsive Styles For Mobile <--*/
+@media (max-width: 668px) {
+    .full-page .login-container {
+        width: 80%;
+    }
+}
+/*--> Creating Loading Animation <--*/
+@keyframes loader {
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
