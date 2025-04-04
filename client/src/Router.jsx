@@ -1,6 +1,8 @@
 import { Navigate } from "react-router-dom";
-
-import Login from "./login/Login"
+import LoginProtector from "./auth/LoginProtector";
+import AdminProtector from "./auth/AdminProtector";
+import Login from "./login/Login";
+import Signup from "./signup/Signup";
 // Import Admins Components...
 import AdminLayouts from "./admin/layouts/AdminLayout";
 import AdminDashboard from "./admin/pages/AdminDashboard";
@@ -15,11 +17,19 @@ const myRoutes = [
     },
     {
         path: "/admin",
-        element: <AdminLayouts />,
+        element: (
+            <AdminProtector>
+                <AdminLayouts />
+            </AdminProtector>
+        ),
         children: [
             {
                 path: "/admin",
-                element: <AdminDashboard />
+                element: (
+                    <AdminProtector>
+                        <AdminDashboard />
+                    </AdminProtector>
+                )
             },
             {
                 path: "/admin/dashboard",
@@ -36,8 +46,12 @@ const myRoutes = [
         ]
     },
     {
-       path : "/login",
-       element : <Login/>
+        path: "/login",
+        element: <LoginProtector><Login /></LoginProtector>
+    },
+    {
+        path: "/signup",
+        element: <LoginProtector><Signup /></LoginProtector>
     }
 ];
 

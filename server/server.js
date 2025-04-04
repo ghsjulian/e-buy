@@ -24,8 +24,11 @@ const publicPath = path.join(__dirname);
 app.use(express.static(publicPath + "/public/"));
 
 // Examples Uses Here...
-const router = require("./routes/file.upload");
-app.use("/file", router);
+//const router = require("./routes/file.upload");
+//app.use("/file", router);
+const usersRoutes = require("./routes/users.routes")
+app.use("/api",usersRoutes)
+
 
 // DB connection here...
 const createConnection = require("./configs/db.connection");

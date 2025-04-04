@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./login.styles.css";
+import "../login/login.styles.css";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { BsBoxArrowInRight } from "react-icons/bs";
 import { useApp } from "../contexts/AppContext";
@@ -8,6 +8,7 @@ import {NavLink } from "react-router-dom"
 const Login = () => {
     const { API, login } = useApp();
     const [loading, setLoading] = useState(false);
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const msgRef = useRef(null);
@@ -25,7 +26,10 @@ const Login = () => {
         }, 3000);
     };
     const checkValidation = () => {
-        if (email.trim() === "") {
+        if (name.trim() === "") {
+            showMsg("Name is required !", false);
+            return false;
+        } else if (email.trim() === "") {
             showMsg("Email is required !", false);
             return false;
         } else if (password.trim() === "") {
@@ -42,10 +46,10 @@ const Login = () => {
         if (!checkValidation()) return;
         setLoading(true);
         try {
-            const request = await fetch(`${API}/user/login`, {
+            const request = await fetch(`${API}/user/signup`, {
                 method: "POST",
                 headers: { "content-type": "application/json" },
-                body: JSON.stringify({ email, password })
+                body: JSON.stringify({ name, email, password })
             });
             const response = await request.json();
             console.log(response);
@@ -64,8 +68,16 @@ const Login = () => {
     return (
         <div className="full-page">
             <div className="login-container">
-                <h3>Please Login Now</h3>
+                <h3>Create New Account</h3>
                 <span ref={msgRef}></span>
+                <input
+                    onChange={e => {
+                        setName(e.target.value);
+                    }}
+                    value={name}
+                    type="text"
+                    placeholder="Enter User Name"
+                />
                 <input
                     onChange={e => {
                         setEmail(e.target.value);
@@ -84,11 +96,10 @@ const Login = () => {
                 />
                 <button onClick={submitData} className="login-btn">
                     {loading && <div className="loader"></div>}
-                    <span>{loading ? "Processing..." : "Login Now"}</span>
+                    <span>{loading ? "Processing..." : "Register Now"}</span>
                     <FaArrowRightLong />
                 </button>
-                                <NavLink to="/signup">Signup Now</NavLink>
-                                
+                <NavLink to="/login">Login Now</NavLink>
             </div>
         </div>
     );

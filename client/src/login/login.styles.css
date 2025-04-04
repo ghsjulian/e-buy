@@ -31,7 +31,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .login-container h3 {
     color: var(--green);
@@ -39,7 +39,27 @@ body {
     margin: 0.5rem auto;
     font-size: 20px;
 }
-.login-container #msg {
+.login-container .error {
+    width: 90%;
+    border: 0.1px solid rgb(53, 6, 0);
+    background: rgb(200, 42, 0);
+    color: var(--white);
+    font-weight: 600;
+    text-align: center;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.login-container .success {
+    width: 90%;
+    border: 0.1px solid rgb(0, 53, 7);
+    background: rgb(0, 154, 42);
+    color: var(--white);
+    font-weight: 600;
+    text-align: center;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 .login-container input {
     width: 90%;
@@ -49,7 +69,7 @@ body {
     font-weight: 600;
     border-radius: 5px;
     padding: 0.8rem 1rem;
-    margin: 0.5rem auto;
+    margin: 0.7rem auto;
     background: transparent;
 }
 .login-container button {
@@ -80,7 +100,26 @@ body {
     border-right: 3px solid currentColor;
     border-top: 3px solid currentColor;
     border-bottom: 3px solid transparent;
-    animation: loader .5s linear infinite;
+    animation: loader 0.5s linear infinite;
+}
+.login-container button span {
+    margin: 0 0.5rem;
+}
+.login-container a {
+    width: 90%;
+    outline: none;
+    border: none;
+    background: rgb(0,120,154);
+    color: var(--white);
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    margin: 0.8rem auto;
+    transition: 0.3s ease-in;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
 }
 /*--> Responsive Styles For Mobile <--*/
 @media (max-width: 668px) {
@@ -93,7 +132,7 @@ body {
     from {
         transform: rotate(0deg);
     }
-    to{
+    to {
         transform: rotate(360deg);
     }
 }
