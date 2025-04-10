@@ -30,8 +30,8 @@
 
 ## About This Project
 
-**This is a Networking project where users can create their new account connect with each others. they can talk in audio voice call. but this features isn't available now because i can't code anymore using my phone that's why but it's really awesome!**
-
+**This is an e commerce admin dashboard where admin can handle site, such as adding products and handling the orders payment etc and may more features. Admin can cancel order and manage the e commerce store. So let's see what the admin can do actually.**
+**Once the admin logged in he can view new orders or pending order. He can update any products and add new product in the e commerce store.**
 ---
 
 ## Features And Functionalities :
